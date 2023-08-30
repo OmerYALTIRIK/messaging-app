@@ -21,7 +21,7 @@ function MessageInput({ sendMessage }) {
         value={message}
         onChange={handleMessageChange}
         onKeyDown={handleKeyDown} // Enter tuşuna basıldığında handleKeyDown çalışacak
-        placeholder="Mesajınızı yazınız..."
+        placeholder="Writing Message..."
         className="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full pr-10"
       />
       <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3">
