@@ -21,6 +21,7 @@ function MessageInput({ sendMessage }) {
         value={message}
         onChange={handleMessageChange}
         onKeyDown={handleKeyDown} // Enter tuşuna basıldığında handleKeyDown çalışacak
+        className='border-2 border-gray-300 p-2 max-w-lg rounded-md'
       />
       <button onClick={() => sendMessage(message)}>Gönder</button>
     </div>
