@@ -10,24 +10,36 @@ function MessageInput({ sendMessage }) {
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       sendMessage(message);
-      setMessage("");
+      setMessage(""); // Input alanını temizle enter'a basınca
     }
   };
 
+  const handleSendClick = () => {
+    sendMessage(message);
+    setMessage(""); // Input alanını temizle mouse ile tıklayınca
+  };
+
   return (
-    <div class="grid gap-4 grid-cols-2 grid-rows-2 w-2/6 mb-3 items-stretch">
-      <input
-        type="text"
-        value={message}
-        onChange={handleMessageChange}
-        onKeyDown={handleKeyDown} // Enter tuşuna basıldığında handleKeyDown çalışacak
-        placeholder="Writing Message..."
-        className=" placeholder-slate-300 text-slate-600 bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-      />
-      <span class="z-10 h-full leading-snug font-normal text-center text-slate-300 bg-transparent rounded text-base w-8 py-3">
-        <i class="fas fa-user"></i>
-      </span>
-      <button onClick={() => sendMessage(message)} className="bg-sky-500 outline outline-offset-2 outline-cyan-500 rounded-lg">Gönder</button>
+    <div className="flex flex-col w-2/6 mb-3 items-stretch m-auto mt-14">
+      <div className="flex items-center border rounded border-gray-300 p-2">
+        <input
+          type="text"
+          value={message}
+          onChange={handleMessageChange}
+          onKeyDown={handleKeyDown}
+          placeholder="Writing Message..."
+          className="flex-grow bg-transparent outline-none"
+        />
+        <span className="h-full leading-snug font-normal text-center text-slate-300 bg-transparent text-base">
+          <i className="fas fa-user"></i>
+        </span>
+      </div>
+      <button
+        onClick={handleSendClick}
+        className="bg-sky-500 rounded-lg mt-3 px-4 py-2 text-white"
+      >
+        Gönder
+      </button>
     </div>
   );
 }
